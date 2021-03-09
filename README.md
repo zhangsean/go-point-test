@@ -1,6 +1,6 @@
 # go-point-test
 
-Go point sum cost compare with normal sum.
+Compare the cost of the Go point sum operation with the normal sum operation.
 
 ## Usage
 
@@ -11,90 +11,63 @@ go build
 # help
 ./go-point-test -h
 Usage of ./go-point-test:
-  -c int
-        Target number for sum testing from 1 to count (default 100)
+  -t int
+      The target number for sum testing from 1 to (default 100000)
 
-# test default
+# test default target
 ./go-point-test
-Target number count: 100
+Sum testing from 1 to 100000
 
-Normal sum start:  1615196170516531000
-Normal sum result: 5050
-Normal sum stop:   1615196170516538000
-Normal sum cost:   0.007 ms
+Normal direct sum result: 5000050000
+Normal direct sum cost:   0.034 ms
 
-Point sum start:  1615196170516549000
-Point sum result: 5050
-Point sum stop:   1615196170516552000
-Point sum cost:   0.003 ms
+Point direct sum result: 5000050000
+Point direct sum cost:   0.2 ms
 
-# test 1000
-./go-point-test -c 1000
-Target number count: 1000
+Normal function sum result: 5000050000
+Normal function sum cost:   0.06 ms
 
-Normal sum start:  1615196200935763000
-Normal sum result: 500500
-Normal sum stop:   1615196200935766000
-Normal sum cost:   0.003 ms
+Point function sum result: 5000050000
+Point function sum cost:   2.237 ms
 
-Point sum start:  1615196200935778000
-Point sum result: 500500
-Point sum stop:   1615196200935802000
-Point sum cost:   0.024 ms
+Normal struct sum result: 5000050000
+Normal struct sum cost:   0.044 ms
 
-# test 10000
-Target number count: 10000
+Point struct sum result: 5000050000
+Point struct sum cost:   0.188 ms
 
-Normal sum start:  1615196226715660000
-Normal sum result: 50005000
-Normal sum stop:   1615196226715678000
-Normal sum cost:   0.018 ms
+Normal struct function sum result: 5000050000
+Normal struct function sum cost:   0.071 ms
 
-Point sum start:  1615196226715691000
-Point sum result: 50005000
-Point sum stop:   1615196226715872000
-Point sum cost:   0.181 ms
+Point struct function sum result: 5000050000
+Point struct function sum cost:   1.925 ms
 
-# test 100000
-./go-point-test -c 100000
-Target number count: 100000
+# test target 10000000
+./go-point-test -t 10000000
+Sum testing from 1 to 10000000
 
-Normal sum start:  1615196302694484000
-Normal sum result: 5000050000
-Normal sum stop:   1615196302694540000
-Normal sum cost:   0.056 ms
+Normal direct sum result: 50000005000000
+Normal direct sum cost:   2.855 ms
 
-Point sum start:  1615196302694552000
-Point sum result: 5000050000
-Point sum stop:   1615196302696605000
-Point sum cost:   2.053 ms
+Point direct sum result: 50000005000000
+Point direct sum cost:   20.45 ms
 
-# test 1000000
-./go-point-test -c 1000000
-Target number count: 1000000
+Normal function sum result: 50000005000000
+Normal function sum cost:   3.843 ms
 
-Normal sum start:  1615196606899236000
-Normal sum result: 500000500000
-Normal sum stop:   1615196606899748000
-Normal sum cost:   0.512 ms
+Point function sum result: 50000005000000
+Point function sum cost:   149.851 ms
 
-Point sum start:  1615196606899761000
-Point sum result: 500000500000
-Point sum stop:   1615196606917723000
-Point sum cost:   17.962 ms
+Normal struct sum result: 50000005000000
+Normal struct sum cost:   2.614 ms
 
-# test 10000000
-./go-point-test -c 10000000
-Target number count: 10000000
+Point struct sum result: 50000005000000
+Point struct sum cost:   20.212 ms
 
-Normal sum start:  1615196671623129000
-Normal sum result: 50000005000000
-Normal sum stop:   1615196671627125000
-Normal sum cost:   3.996 ms
+Normal struct function sum result: 50000005000000
+Normal struct function sum cost:   3.628 ms
 
-Point sum start:  1615196671627140000
-Point sum result: 50000005000000
-Point sum stop:   1615196671785845000
-Point sum cost:   158.705 ms
+Point struct function sum result: 50000005000000
+Point struct function sum cost:   152.088 ms
 
 ```
